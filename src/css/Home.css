@@ -1,0 +1,30 @@
+#home {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.home-content {
+    max-width: 600px;
+    /* Limit content width */
+    margin-left: 20px;
+    /* Add margin to push content a bit left */
+    padding: 20px;
+    text-align: left;
+    padding-bottom: 110px;
+    margin-bottom: 10px;
+    /* Align text to the left */
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#home p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}

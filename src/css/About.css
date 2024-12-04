@@ -1,0 +1,13 @@
+.container-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin: 60px 20px 20px 20px;
+    padding: 20px 0;
+}
+
+.personal-photo {
+    border-radius: 50px;
+    height: 100%;
+    width: 40%;
+}

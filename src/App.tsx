@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Header />
-      <div style={{ minHeight: '100vh', overflowY: 'auto' }}> {/* Added to allow scrolling */}
+      <div style={{ minHeight: '100vh', overflowY: 'auto', padding: 0 }}> {/* Added to allow scrolling */}
         {/* Sections that can be scrolled to */}
         <Home />
         <About />

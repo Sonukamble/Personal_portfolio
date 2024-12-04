@@ -1,5 +1,5 @@
 // src/components/Header.tsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
     AppBar,
@@ -19,6 +19,7 @@ import './../../css/Header.css';
 
 const Header: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [isHome, setIsHome] = useState(true); // Track if the user is on the "Home" section
 
     // Get the theme and check screen size
     const theme = useTheme();
@@ -28,10 +29,31 @@ const Header: React.FC = () => {
         setDrawerOpen(open);
     };
 
+    // Detect scroll position
+    useEffect(() => {
+        const handleScroll = () => {
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                const { top, bottom } = homeSection.getBoundingClientRect();
+                setIsHome(top <= 0 && bottom > 0); // True if the header overlaps with the Home section
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const menuItems = ['Home', 'About', 'Projects', 'Skills', 'Contact'];
 
     return (
-        <AppBar position="sticky" color="primary">
+        <AppBar position="sticky" color="primary"
+            sx={{
+                backgroundColor: isHome ? 'transparent' : '#3f51b5', // Light background for "Home", default for others
+                color: isHome ? '#fff' : '#fff', // Change text color based on section
+                top: 0,
+                zIndex: 1200,
+            }}
+        >
             <Toolbar>
                 {/* Logo or Title */}
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
