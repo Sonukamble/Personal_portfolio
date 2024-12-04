@@ -1,0 +1,6 @@
+/* src/css/style.css or global styles */
+html,
+body {
+    scroll-behavior: smooth;
+    /* Added for smooth scrolling */
+}

@@ -11,13 +11,14 @@ const App: React.FC = () => {
   return (
     <Router>
       <Header />
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div style={{ minHeight: '100vh', overflowY: 'auto' }}> {/* Added to allow scrolling */}
+        {/* Sections that can be scrolled to */}
+        <Home />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </div>
     </Router>
   );
 };
