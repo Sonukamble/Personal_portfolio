@@ -43,8 +43,8 @@ const Header: React.FC = () => {
                 {!isMobile && (
                     <Box sx={{ display: 'flex', gap: 2 }}>
                         {menuItems.map((item) => (
-                            <Button key={item} color="inherit"
-                                variant="outlined"
+                            <Button key={item} color="inherit" 
+                                variant="outlined" 
                                 component={Link} // Use Link component from react-router-dom
                                 to={`/${item.toLowerCase()}`} // Set the link path dynamically
                             >
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
                             <Box sx={{ width: 250 }} role="presentation">
                                 <List className='header-drawer-list'>
                                     {menuItems.map((item) => (
-                                        <ListItem key={item} disablePadding
+                                        <ListItem key={item} disablePadding 
                                             component={Link} // Use Link component from react-router-dom
                                             to={`/${item.toLowerCase()}`} // Set the link path dynamically    
                                         >
