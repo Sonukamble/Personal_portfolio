@@ -53,13 +53,13 @@
 }
 
 /* Contact Form */
-#contact form {
+/* #contact form {
     width: 100%;
-    max-width: 500px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
+} */
 
 #contact .MuiTextField-root {
     background-color: #fff;
@@ -75,4 +75,24 @@
 
 #contact .MuiButton-containedPrimary:hover {
     background-color: #0d47a1;
+}
+
+#contact .contact-form {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 10px 40px;
+    padding: 40px;
+}
+
+#contact .contact-form-submission{
+    display: flex;
+    gap: 40px;
+}
+#contact .cards-field{
+    width: 300px;
 }

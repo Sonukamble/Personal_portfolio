@@ -68,9 +68,9 @@ const projects_details = [
 ];
 
 const Projects: React.FC = () => {
-    const [activeIndex, setActiveIndex] = React.useState(0);
-    const [prevIndex, setPrevIndex] = React.useState(0);
-    const [activeTransition, setActiveTransition] = React.useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [prevIndex, setPrevIndex] = useState(0);
+    const [activeTransition, setActiveTransition] = useState(false);
 
 
     const handleDotClick = (index: number) => {
@@ -112,6 +112,15 @@ const Projects: React.FC = () => {
                     <Card color="neutral" variant="solid"
                         className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
                     >
+                        <CardOverflow>
+                            <AspectRatio ratio="2">
+                                <img
+                                    src="src\assets\Home_background\pexels-shottrotter-1309766.jpg"
+                                    loading="lazy"
+                                    alt={`Thumbnail`}
+                                />
+                            </AspectRatio>
+                        </CardOverflow>
                     </Card>
                     {/* Display only the active project */}
                     {projects_details.map((project, index) =>
