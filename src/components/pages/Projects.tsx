@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/joy/Card';
 import '../../css/Projects.css';
 import { AspectRatio, CardContent, Typography, Link, CardOverflow } from '@mui/joy';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 const projects_details = [
     {
@@ -56,7 +56,7 @@ const projects_details = [
         liveDemo: "https://live-demo-link.com",
     },
     {
-        name: "Portfolio Website2",
+        name: "Portfolio Website3567",
         description:
             "A personal portfolio website to showcase projects, skills, and experience in a professional layout.",
         technologies: "HTML, CSS, JavaScript, React",
@@ -65,62 +65,130 @@ const projects_details = [
         github: "https://github.com/username/portfolio-website",
         liveDemo: "https://live-demo-link.com",
     }
-    // Add more project objects as needed
 ];
 
 const Projects: React.FC = () => {
+    const [activeIndex, setActiveIndex] = React.useState(0);
+    const [prevIndex, setPrevIndex] = React.useState(0);
+    const [activeTransition, setActiveTransition] = React.useState(false);
+
+
+    const handleDotClick = (index: number) => {
+        setActiveIndex(index);
+    };
+
+    const handleNext = () => {
+        setActiveTransition(true);
+        setPrevIndex(activeIndex);
+        setActiveIndex((prevIndex) => (prevIndex + 1) % projects_details.length);
+        triggerTransition();
+    };
+
+    const handlePrevious = () => {
+        setActiveTransition(true);
+        setPrevIndex(activeIndex);
+        setActiveIndex(
+            (prevIndex) => (prevIndex - 1 + projects_details.length) % projects_details.length
+        );
+        triggerTransition();
+    };
+
+    const triggerTransition = () => {
+        setActiveTransition(true);
+        setTimeout(() => {
+            setActiveTransition(false); // Reset after 1 second
+        }, 1000); // Match your transition duration in CSS
+    };
     return (
         <div id="projects" className="projects-container">
             <Typography level="h4" component="h1" className="projects-title">
                 My Projects
             </Typography>
-            <Box className="projects-grid">
-                {projects_details.map((project, index) => (
-                    <Card key={index} color="neutral" variant="soft" className="card-structure">
-                        <CardOverflow>
-                            <AspectRatio ratio="2">
-                                <img
-                                    src={project.image}
-                                    loading="lazy"
-                                    alt={`${project.name} Thumbnail`}
-                                />
-                            </AspectRatio>
-                        </CardOverflow>
-                        <CardContent className="card-content-text">
-                            <Typography level="h4" component="h2" className="project-name">
-                                {project.name}
-                            </Typography>
-
-                            <Typography component="p" className="project-description">
-                                {project.description}
-                            </Typography>
-
-                            <Typography className="project-technologies">
-                                <strong>Technologies Used:</strong> {project.technologies}
-                            </Typography>
-
-                            <div className="project-links">
-                                <Link
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="project-link"
-                                >
-                                    GitHub Repository
-                                </Link>
-                                <Link
-                                    href={project.liveDemo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="project-link"
-                                >
-                                    Live Demo
-                                </Link>
-                            </div>
-                        </CardContent>
+            <Box className="display-box">
+                <div className='centered-button'>
+                    <Button onClick={handlePrevious} className="carousel-button">Previous</Button>
+                </div>
+                <div className="projects-grid">
+                    <Card color="neutral" variant="solid"
+                        className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
+                    >
                     </Card>
-                ))}
+                    {/* Display only the active project */}
+                    {projects_details.map((project, index) =>
+                        index === activeIndex ? (
+                            <Card
+                                sx={{ width: 500 }}
+                                key={index}
+                                color="neutral"
+                                variant="soft"
+                                className={`card-structure ${index === activeIndex ? 'active' : ''}`}
+                            // className="card-structure"
+                            >
+                                <CardOverflow>
+                                    <AspectRatio ratio="2">
+                                        <img
+                                            src={project.image}
+                                            loading="lazy"
+                                            alt={`${project.name} Thumbnail`}
+                                        />
+                                    </AspectRatio>
+                                </CardOverflow>
+                                <CardContent className="card-content-text">
+                                    <Typography level="h4" component="h2" className="project-name">
+                                        {project.name}
+                                    </Typography>
+
+                                    <Typography component="p" className="project-description">
+                                        {project.description}
+                                    </Typography>
+
+                                    <Typography className="project-technologies">
+                                        <strong>Technologies Used:</strong> {project.technologies}
+                                    </Typography>
+
+                                    <div className="project-links">
+                                        <Link
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="project-link"
+                                        >
+                                            GitHub Repository
+                                        </Link>
+                                        <Link
+                                            href={project.liveDemo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="project-link"
+                                        >
+                                            Live Demo
+                                        </Link>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ) : null
+                    )}
+                    <Card color="neutral" variant="solid"
+                        className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
+                    >
+
+                    </Card>
+                </div>
+                <div className='centered-button' >
+                    <Button onClick={handleNext} className="carousel-button">Next</Button>
+                </div>
             </Box>
+
+
+            <div className="dots-container">
+                {projects_details.map((_, index) => (
+                    <span
+                        key={index}
+                        className={`dot ${index === activeIndex ? 'active' : ''}`}
+                        onClick={() => handleDotClick(index)}
+                    ></span>
+                ))}
+            </div>
 
         </div>
     );
