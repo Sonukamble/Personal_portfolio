@@ -58,7 +58,6 @@ const Skills: React.FC = () => {
                         ))}
                     </Box>
 
-                    {/* AI & GenAI Skills */}
                     <Typography variant="h6" style={{ marginTop: '2rem', marginBottom: '1rem' }}>
                         GenAI and AI Integrations:
                     </Typography>

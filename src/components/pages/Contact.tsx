@@ -22,11 +22,11 @@ const Contact: React.FC = () => {
                     <Typography variant="body1" component="p">
                         Feel free to reach out to me at:{' '}
                         <Link href="mailto:your-email@example.com" target="_blank" style={{ fontWeight: 'bold' }}>
-                            your-email@example.com
+                            ddkamble2141@gmail.com
                         </Link>
                     </Typography>
                     <div className='contact-form-submission'>
-                        <Card className="cards-field">
+                        <Card color="primary" variant="soft" className="cards-field">
                             <TextField
                                 label="Your Name"
                                 variant="outlined"
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
                                 margin="normal"
                             />
                         </Card>
-                        <Card className="cards-field">
+                        <Card color="primary" variant="soft" className="cards-field">
                             <TextField
                                 label="Your Message"
                                 variant="outlined"

@@ -6,6 +6,7 @@ import About from './components/pages/About';
 import Skills from './components/pages/Skills';
 import Projects from './components/pages/Projects';
 import Contact from './components/pages/Contact';
+import Footer from './components/navbar/Footer';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Skills />
         <Contact />
       </div>
+      <Footer />
     </Router>
   );
 };
