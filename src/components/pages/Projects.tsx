@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Card from '@mui/joy/Card';
 import '../../css/Projects.css';
-import { AspectRatio, CardContent, Typography, Link, CardOverflow } from '@mui/joy';
-import { Box, Button } from '@mui/material';
+import { AspectRatio, CardContent, Typography, Link, CardOverflow, CardCover } from '@mui/joy';
+import { Box } from '@mui/material';
+import Button from '@mui/joy/Button';
+
 
 const projects_details = [
     {
@@ -106,21 +108,34 @@ const Projects: React.FC = () => {
             </Typography>
             <Box className="display-box">
                 <div className='centered-button'>
-                    <Button onClick={handlePrevious} className="carousel-button">Previous</Button>
+                    <Button color="primary" variant="solid" onClick={handlePrevious} className="carousel-button">Previous</Button>
                 </div>
                 <div className="projects-grid">
-                    <Card color="neutral" variant="solid"
+                    <Card color="neutral" variant="soft"
                         className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
                     >
                         <CardOverflow>
                             <AspectRatio ratio="2">
                                 <img
-                                    src="src\assets\Home_background\pexels-shottrotter-1309766.jpg"
+                                    src=""
                                     loading="lazy"
-                                    alt={`Thumbnail`}
+                                // alt={`Thumbnail`}
                                 />
                             </AspectRatio>
                         </CardOverflow>
+                        <CardCover
+                            sx={{
+                                background:
+                                    'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+                                border: '1px solid',
+                                borderColor: '#777',
+                                backdropFilter: 'blur(1px)',
+                            }}
+                        >
+                            <Typography level="h2" textColor="#fff" sx={{ fontSize: 'lg' }}>
+                                Project Cover
+                            </Typography>
+                        </CardCover>
                     </Card>
                     {/* Display only the active project */}
                     {projects_details.map((project, index) =>
@@ -177,14 +192,35 @@ const Projects: React.FC = () => {
                             </Card>
                         ) : null
                     )}
-                    <Card color="neutral" variant="solid"
+                    <Card color="neutral" variant="soft"
                         className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
                     >
-
+                        <CardOverflow>
+                            <AspectRatio ratio="2">
+                                <img
+                                    src=""
+                                    loading="lazy"
+                                // alt={`Thumbnail`}
+                                />
+                            </AspectRatio>
+                        </CardOverflow>
+                        <CardCover
+                            sx={{
+                                background:
+                                    'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+                                border: '1px solid',
+                                borderColor: '#777',
+                                backdropFilter: 'blur(1px)',
+                            }}
+                        >
+                            <Typography level="h2" textColor="#fff" sx={{ fontSize: 'lg' }}>
+                                Project Cover
+                            </Typography>
+                        </CardCover>
                     </Card>
                 </div>
                 <div className='centered-button' >
-                    <Button onClick={handleNext} className="carousel-button">Next</Button>
+                    <Button color="primary" variant="solid" onClick={handleNext} className="carousel-button">Next</Button>
                 </div>
             </Box>
 

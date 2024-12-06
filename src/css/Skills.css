@@ -1,0 +1,26 @@
+.skills-container {
+    padding: 30px 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+}
+
+.skills-text-container{
+    justify-content: center;
+}
+
+.skills-box {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.search-bar-context {
+    display: flex;
+    justify-content: space-between;
+}

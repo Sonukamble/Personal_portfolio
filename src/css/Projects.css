@@ -1,12 +1,14 @@
 /* Container Styling */
 .projects-container {
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     padding: 2rem 1rem;
-    background-color: #f9f9f9;
+    background-color: #E2E4DC !important;
+    /* background-color: #f9f9f9; */
 }
 
 
@@ -47,9 +49,10 @@
 
 .card-structure:hover {
     transform: translateY(-5px);
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    height: 400px !important;
+    width: 35vw !important;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 
@@ -58,11 +61,8 @@
 .project-description,
 .project-technologies {
     margin: 0;
-    /* max-width: 100%; */
     height: auto;
 }
-
-
 
 /* Project Name Styling */
 .project-name {
@@ -171,9 +171,7 @@
 
 .card-structure.active {
     transform: scale(1);
-    /* Scale up active card */
     opacity: 1;
-    /* Make the active card fully visible */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -195,4 +193,8 @@
 
 .card-structure-prev.active {
     animation: fadeIn 0.3s ease-in-out;
+}
+
+.carousel-button {
+    padding: 30px;
 }
