@@ -12,26 +12,31 @@ import { SiFastapi, SiReact, SiTypescript, SiHtml5, SiCss3, SiJavascript, SiMysq
 const Skills: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
 
+    // Modified skills_details array with documentation links
     const skills_details = [
-        { name: 'Python', icon: <FaPython size={50} color="#3776AB" /> },
-        { name: 'FastAPI', icon: <SiFastapi size={50} color="#009688" /> },
-        { name: 'React', icon: <SiReact size={50} color="#61DBFB" /> },
-        { name: 'TypeScript', icon: <SiTypescript size={50} color="#3178C6" /> },
-        { name: 'HTML5', icon: <SiHtml5 size={50} color="#E34F26" /> },
-        { name: 'CSS3', icon: <SiCss3 size={50} color="#1572B6" /> },
-        { name: 'JavaScript', icon: <SiJavascript size={50} color="#F7DF1E" /> },
-        { name: 'MySQL', icon: <SiMysql size={50} color="#4479A1" /> },
-        { name: 'Git', icon: <FaGit size={50} color="#F05032" /> },
-        { name: 'Flask', icon: <SiFlask size={50} color="#000000" /> },
-        { name: 'Django', icon: <SiDjango size={50} color="#092E20" /> },
-        { name: 'GitHub', icon: <FaGithub size={50} color="#181717" /> }, // Added GitHub
+        { name: 'Python', icon: <FaPython size={50} color="#3776AB" />, docsLink: 'https://docs.python.org/3/' },
+        { name: 'FastAPI', icon: <SiFastapi size={50} color="#009688" />, docsLink: 'https://fastapi.tiangolo.com/' },
+        { name: 'React', icon: <SiReact size={50} color="#61DBFB" />, docsLink: 'https://reactjs.org/docs/getting-started.html' },
+        { name: 'TypeScript', icon: <SiTypescript size={50} color="#3178C6" />, docsLink: 'https://www.typescriptlang.org/docs/' },
+        { name: 'HTML5', icon: <SiHtml5 size={50} color="#E34F26" />, docsLink: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+        { name: 'CSS3', icon: <SiCss3 size={50} color="#1572B6" />, docsLink: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+        { name: 'JavaScript', icon: <SiJavascript size={50} color="#F7DF1E" />, docsLink: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+        { name: 'MySQL', icon: <SiMysql size={50} color="#4479A1" />, docsLink: 'https://dev.mysql.com/doc/' },
+        { name: 'Flask', icon: <SiFlask size={50} color="#000000" />, docsLink: 'https://flask.palletsprojects.com/en/2.1.x/' },
+        { name: 'Django', icon: <SiDjango size={50} color="#092E20" />, docsLink: 'https://docs.djangoproject.com/en/stable/' },
+        { name: 'GitHub', icon: <FaGithub size={50} color="#181717" />, docsLink: 'https://docs.github.com/en/github' },
     ];
     const filteredSkills = skills_details.filter(skill =>
         skill.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    // Open documentation URL when skill is clicked
+    const openDocs = (url: string) => {
+        window.open(url, '_blank');
+    };
+
     return (
-        <div id="skills" style={{ height: '87vh', backgroundColor: '#e0e0e0', marginTop: '1px' }} className='skills-container'>
+        <div id="skills" style={{ height: '87vh', backgroundColor: '#E2E4DC', marginTop: '1px' }} className='skills-container'>
             <Grid className="skills-text-container">
                 <Typography variant="h4" style={{ marginBottom: '1rem' }}>
                     Backend Expertise
@@ -73,16 +78,11 @@ const Skills: React.FC = () => {
 
                 <Divider />
                 <Box className="skills-box">
-                    {/* {skills_details.map((skill, index) => (
-                        <Tooltip key={index} title={skill.name}>
-                            <Avatar color="neutral" variant="soft" >
-                                {skill.icon}
-                            </Avatar>
-                        </Tooltip>
-                    ))} */}
                     {filteredSkills.map((skill, index) => (
                         <Tooltip key={index} title={skill.name}>
-                            <Avatar color="neutral" variant="soft">
+                            <Avatar color="neutral" variant="soft" onClick={() => openDocs(skill.docsLink)} 
+                                className="avater-skills"    
+                            >
                                 {skill.icon}
                             </Avatar>
                         </Tooltip>

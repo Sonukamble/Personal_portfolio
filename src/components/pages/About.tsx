@@ -8,7 +8,7 @@ import './../../css/About.css';
 
 const About: React.FC = () => {
     return (
-        <div id="about" style={{ height: '87vh', backgroundColor: '#fff', padding: '2rem 0', marginTop: '100px' }}>
+        <div id="about" style={{ height: '87vh', backgroundColor: '#E2E4DC', padding: '2rem 0' }}>
             <Box className="container-about" >
                 {/* Photo */}
                 <Grid style={{ textAlign: 'center' }}>
