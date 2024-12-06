@@ -4,8 +4,50 @@
     gap: 4px;
 }
 
-.header-button{
+.header-button {
     font-size: 3rem;
     background-color: black !important;
     color: white;
+}
+
+/* Drawer List Styling */
+.header-drawer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+}
+
+.header-drawer-list a {
+    text-decoration: none;
+    color: #333;
+    /* Neutral color for text */
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.header-drawer-list a:hover {
+    color: #1976d2;
+    /* Highlight color */
+    background-color: rgba(25, 118, 210, 0.1);
+    /* Subtle hover effect */
+    border-radius: 4px;
+}
+
+/* Responsive Menu for Mobile */
+@media (max-width: 768px) {
+    .header-drawer-list a {
+        font-size: 1.2rem;
+        padding: 15px 0;
+    }
+}
+
+.color-for-side {
+    background-color: #D6E2EB !important;
+}
+
+.sider-main:hover{
+    border: 1px solid #4A7596;
 }

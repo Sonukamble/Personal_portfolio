@@ -88,7 +88,7 @@ const Header: React.FC = () => {
                 )}
 
                 {/* Mobile/Tablet View (Menu Icon and Drawer) */}
-                {isMobile && (
+                {/* {isMobile && (
                     <>
                         <IconButton
                             edge="end"
@@ -117,7 +117,46 @@ const Header: React.FC = () => {
                             </Box>
                         </Drawer>
                     </>
+                )} */}
+                {isMobile && (
+                    <div>
+                        <IconButton
+                            edge="end"
+                            color="inherit"
+                            aria-label="menu"
+                            onClick={toggleDrawer(true)}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Drawer
+                            anchor="right"
+                            open={drawerOpen}
+                            onClose={toggleDrawer(false)}
+                            style={{ backgroundColor:'D6E2EB' }}
+                            
+                        >
+                            <Box sx={{ width: 250 }} role="presentation" className='color-for-side'>
+                                <List className="header-drawer-list">
+                                    {menuItems.map((item) => (
+                                        <ListItem
+                                            key={item}
+                                            disablePadding
+                                            component="a"
+                                            href={`#${item.toLowerCase()}`}
+                                            tabIndex={0} // Enable keyboard navigation
+                                            onClick={toggleDrawer(false)}
+                                            className='sider-main'
+                                        >
+                                            <ListItemText primary={item} sx={{ padding: 2, textAlign: 'center' }} />
+                                        </ListItem>
+
+                                    ))}
+                                </List>
+                            </Box>
+                        </Drawer>
+                    </div>
                 )}
+
             </Toolbar>
         </AppBar>
     );
