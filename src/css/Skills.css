@@ -62,7 +62,6 @@
 .card-of-skill {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Default shadow */
 }
 /* Scale and enhance shadow on hover */
 .card-of-skill:hover {

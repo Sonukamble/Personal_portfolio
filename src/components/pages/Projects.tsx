@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
     return (
         <div id="projects" className="projects-container">
             <Typography level="h4" component="h1" className="projects-title">
-                My Projects
+                 Projects
             </Typography>
             <Box className="display-box">
                 <div className='centered-button'>

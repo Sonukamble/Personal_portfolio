@@ -3,11 +3,30 @@
     grid-template-columns: 1fr 1fr;
     gap: 4px;
     margin: 60px 20px 20px 20px;
-    padding: 20px 0;
+    padding: 20px 20px;
 }
 
 .personal-photo {
     border-radius: 50px;
+    height: 100% !important;
+    width: 70%;
+}
+
+.personal-image-card {
+    width: 60%;
     height: 100%;
-    width: 40%;
+    margin: 0 90px;
+    padding-left: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.personal-image-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.display-about-text{
+    display: grid;
+    gap: 20px !important;
 }
