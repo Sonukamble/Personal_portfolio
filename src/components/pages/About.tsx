@@ -21,7 +21,6 @@ const About: React.FC = () => {
                 padding: '20px',
                 alignItems: 'center',
             }}>
-                {/* Photo */}
                 <Card className="personal-image-card" sx={{
                     width: isMobile ? '90%' : isTablet ? '55%' : '60%',
                     margin: isMobile ? '0 auto' : '0 90px',

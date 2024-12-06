@@ -197,3 +197,32 @@
 .carousel-button {
     padding: 30px;
 }
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+    .display-box {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .card-structure:hover {
+        transform: translateY(-5px);
+        height: 400px !important;
+        width: 31vw !important;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+/* Tablet View */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .display-box {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+}
+
+
+/* Laptop and larger views */
+@media screen and (min-width: 1025px) {}

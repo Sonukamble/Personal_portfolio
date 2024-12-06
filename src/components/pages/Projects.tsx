@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '@mui/joy/Card';
 import '../../css/Projects.css';
 import { AspectRatio, CardContent, Typography, Link, CardOverflow, CardCover } from '@mui/joy';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 import Button from '@mui/joy/Button';
 
 
@@ -73,6 +73,12 @@ const Projects: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [prevIndex, setPrevIndex] = useState(0);
     const [activeTransition, setActiveTransition] = useState(false);
+    const isMobile = useMediaQuery('(max-width: 600px)');
+    const isTablet = useMediaQuery('(min-width: 601px) and (max-width: 1024px)');
+    const isLaptop = useMediaQuery('(min-width: 1025px)');
+
+    // Card visibility
+    const showPersonalImageCard = isLaptop;
 
 
     const handleDotClick = (index: number) => {
@@ -111,7 +117,7 @@ const Projects: React.FC = () => {
                     <Button color="primary" variant="solid" onClick={handlePrevious} className="carousel-button">Previous</Button>
                 </div>
                 <div className="projects-grid">
-                    <Card color="neutral" variant="soft"
+                    {showPersonalImageCard && <Card color="neutral" variant="soft"
                         className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
                     >
                         <CardOverflow>
@@ -136,7 +142,8 @@ const Projects: React.FC = () => {
                                 Project Cover
                             </Typography>
                         </CardCover>
-                    </Card>
+                    </Card>}
+
                     {/* Display only the active project */}
                     {projects_details.map((project, index) =>
                         index === activeIndex ? (
@@ -192,7 +199,7 @@ const Projects: React.FC = () => {
                             </Card>
                         ) : null
                     )}
-                    <Card color="neutral" variant="soft"
+                    {showPersonalImageCard && <Card color="neutral" variant="soft"
                         className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
                     >
                         <CardOverflow>
@@ -217,7 +224,7 @@ const Projects: React.FC = () => {
                                 Project Cover
                             </Typography>
                         </CardCover>
-                    </Card>
+                    </Card>}
                 </div>
                 <div className='centered-button' >
                     <Button color="primary" variant="solid" onClick={handleNext} className="carousel-button">Next</Button>
