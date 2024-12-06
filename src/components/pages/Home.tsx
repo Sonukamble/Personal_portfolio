@@ -30,7 +30,7 @@ const Home: React.FC = () => {
                     }}
                 >
                     {/* Welcome to My Portfolio */}
-                    Hi, I'm Dipa 
+                    Hi, I'm Dipa
                     {/* <br /> Experienced Software Developer */}
 
                 </Typography>
