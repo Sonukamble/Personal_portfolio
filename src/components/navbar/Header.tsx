@@ -16,6 +16,9 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import './../../css/Header.css';
+import { AccountCircle } from '@mui/icons-material'; // You can import any icon you want
+import { Avatar } from '@mui/joy';
+
 
 const Header: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -56,7 +59,15 @@ const Header: React.FC = () => {
         >
             <Toolbar>
                 {/* Logo or Title */}
-                <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                {/* <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                    DDK
+                </Typography> */}
+
+                <Typography variant="h5" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', curser: 'pointer' }}>
+                    {/* Logo Icon */}
+                    <Avatar sx={{ width: 40, height: 40, marginRight: 1 }}>
+                        <AccountCircle />
+                    </Avatar>
                     DDK
                 </Typography>
 
