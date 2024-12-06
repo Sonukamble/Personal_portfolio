@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid2';
 
 import '../../css/Skills.css';
 import { Avatar, Card, Tooltip } from '@mui/joy';
-import { FaGit, FaGithub, FaPython } from 'react-icons/fa';
+import { FaGithub, FaPython } from 'react-icons/fa';
 import { SiFastapi, SiReact, SiTypescript, SiHtml5, SiCss3, SiJavascript, SiMysql, SiFlask, SiDjango } from 'react-icons/si';
 
 const Skills: React.FC = () => {
