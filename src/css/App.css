@@ -1,8 +1,7 @@
-/* src/css/style.css or global styles */
 html,
 body {
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-    /* Added for smooth scrolling */
+    font-family: 'Inter', sans-serif;
 }

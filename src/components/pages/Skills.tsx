@@ -38,20 +38,21 @@ const Skills: React.FC = () => {
     return (
         <div id="skills" style={{ height: '87vh', backgroundColor: '#E2E4DC', marginTop: '1px' }} className='skills-container'>
             <Grid className="skills-text-container">
-                <Typography variant="h4" style={{ marginBottom: '1rem' }}>
+                <Typography variant="h4">
                     Backend Expertise
                 </Typography>
-                <Typography variant="body1" style={{ marginBottom: '1rem' }}>
+                <Typography variant="body1">
                     I build scalable RESTful APIs with FastAPI, Django, and Flask, focusing on performance and security, and optimize MySQL databases for high-performance apps.
                 </Typography>
-                <Typography variant="body1" style={{ marginBottom: '1rem' }}>
+                <Typography variant="body1">
                     I also integrate GenAI technologies, including LLMs, prompt generation, token management, and API integration.
                 </Typography>
-                <Typography variant="body1" style={{ marginBottom: '1rem' }}>
+                <Typography variant="body1">
                     While specializing in backend, I’ve developed full-stack apps using React and TypeScript, integrating frontend and backend seamlessly.
                 </Typography>
             </Grid>
-            <Card>
+
+            <Card className="card-of-skill">
                 <div className='search-bar-context'>
                     <Typography variant="h6" style={{ marginBottom: '1rem', fontWeight: 'bold', fontSize: '1.25rem' }}>
                         Technical & Core Skills
@@ -80,8 +81,8 @@ const Skills: React.FC = () => {
                 <Box className="skills-box">
                     {filteredSkills.map((skill, index) => (
                         <Tooltip key={index} title={skill.name}>
-                            <Avatar color="neutral" variant="soft" onClick={() => openDocs(skill.docsLink)} 
-                                className="avater-skills"    
+                            <Avatar color="neutral" variant="soft" onClick={() => openDocs(skill.docsLink)}
+                                className="avater-skills"
                             >
                                 {skill.icon}
                             </Avatar>
