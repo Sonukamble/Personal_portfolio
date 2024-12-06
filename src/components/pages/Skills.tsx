@@ -83,6 +83,11 @@ const Skills: React.FC = () => {
                         <Tooltip key={index} title={skill.name}>
                             <Avatar color="neutral" variant="soft" onClick={() => openDocs(skill.docsLink)}
                                 className="avater-skills"
+                                sx={{
+                                    width: 60, // Increase width to 60px (adjust as needed)
+                                    height: 60, // Increase height to 60px (adjust as needed)
+                                    fontSize: '1.5rem', // Increase icon size within the avatar
+                                }}
                             >
                                 {skill.icon}
                             </Avatar>

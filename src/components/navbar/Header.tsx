@@ -51,13 +51,13 @@ const Header: React.FC = () => {
                 backgroundColor: isHome ? 'transparent' : '#3f51b5', // Light background for "Home", default for others
                 color: isHome ? '#fff' : '#fff', // Change text color based on section
                 top: 0,
-                zIndex: 1200,
+                zIndex: 1200
             }}
         >
             <Toolbar>
                 {/* Logo or Title */}
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    My Portfolio
+                <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                    DDK
                 </Typography>
 
                 {/* Desktop View (Buttons) */}
@@ -68,6 +68,7 @@ const Header: React.FC = () => {
                                 variant="outlined"
                                 component="a" // Change Link to a regular anchor tag
                                 href={`#${item.toLowerCase()}`} // Directly link to the section using IDs
+                                className={isHome ? 'header-button' : ''}
                             >
                                 {item}
                             </Button>
