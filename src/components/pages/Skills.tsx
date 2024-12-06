@@ -36,7 +36,7 @@ const Skills: React.FC = () => {
     };
 
     return (
-        <div id="skills" style={{ height: '87vh', backgroundColor: '#E2E4DC', marginTop: '1px' }} className='skills-container'>
+        <div id="skills" style={{ backgroundColor: '#E2E4DC', marginTop: '1px' }} className='skills-container'>
             <Grid className="skills-text-container">
                 <Typography variant="h4">
                     Backend Expertise
