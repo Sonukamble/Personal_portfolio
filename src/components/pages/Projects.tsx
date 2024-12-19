@@ -4,68 +4,28 @@ import '../../css/Projects.css';
 import { AspectRatio, CardContent, Typography, Link, CardOverflow, CardCover } from '@mui/joy';
 import { Box, useMediaQuery } from '@mui/material';
 import Button from '@mui/joy/Button';
+import ResumeProject from '../../assets/Projects/Resume_filter.png';
+import FoodProject from '../../assets/Projects/Food_recipe.png';
 
 
 const projects_details = [
     {
+        name: "Resume Filter Project",
+        description: "A fully functional e-commerce platform with product listings and user authentication.",
+        technologies: "ReactJS, TypeScript, HTML, CSS, FastAPI, MySQL, JWT Authentication",
+        image: ResumeProject,
+        github: "https://github.com/Sonukamble/Resume_filter_project",
+        liveDemo: "https://sonukamble.github.io/Resume_filter_project/"
+    }
+    ,
+    {
         name: "Food Recipe App",
         description:
             "A web application that allows users to search for recipes based on ingredients, dietary preferences, and cuisines.",
-        technologies: "ReactJS, TypeScript, FastAPI, External Recipe API",
-        image:
-            "https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286",
-        github: "https://github.com/username/food-recipe-app",
-        liveDemo: "https://live-demo-link.com",
-    },
-    {
-        name: "E-Commerce Platform",
-        description:
-            "A fully functional e-commerce platform with product listings, user authentication, and a payment gateway.",
-        technologies: "ReactJS, Redux, Node.js, Express, MongoDB",
-        image:
-            "https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286",
-        github: "https://github.com/username/e-commerce-platform",
-        liveDemo: "https://live-demo-link.com",
-    },
-    {
-        name: "Portfolio Website",
-        description:
-            "A personal portfolio website to showcase projects, skills, and experience in a professional layout.",
-        technologies: "HTML, CSS, JavaScript, React",
-        image:
-            "https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286",
-        github: "https://github.com/username/portfolio-website",
-        liveDemo: "https://live-demo-link.com",
-    },
-    {
-        name: "Portfolio Website4",
-        description:
-            "A personal portfolio website to showcase projects, skills, and experience in a professional layout.",
-        technologies: "HTML, CSS, JavaScript, React",
-        image:
-            "https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286",
-        github: "https://github.com/username/portfolio-website",
-        liveDemo: "https://live-demo-link.com",
-    },
-    {
-        name: "Portfolio Website3",
-        description:
-            "A personal portfolio website to showcase projects, skills, and experience in a professional layout.",
-        technologies: "HTML, CSS, JavaScript, React",
-        image:
-            "https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286",
-        github: "https://github.com/username/portfolio-website",
-        liveDemo: "https://live-demo-link.com",
-    },
-    {
-        name: "Portfolio Website3567",
-        description:
-            "A personal portfolio website to showcase projects, skills, and experience in a professional layout.",
-        technologies: "HTML, CSS, JavaScript, React",
-        image:
-            "https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286",
-        github: "https://github.com/username/portfolio-website",
-        liveDemo: "https://live-demo-link.com",
+        technologies: "ReactJS, TypeScript, External Recipe API",
+        image: FoodProject,
+        github: "https://github.com/Sonukamble/Food_Recipe",
+        liveDemo: "https://sonukamble.github.io/Food_Recipe/",
     }
 ];
 
@@ -110,14 +70,14 @@ const Projects: React.FC = () => {
     return (
         <div id="projects" className="projects-container">
             <Typography level="h4" component="h1" className="projects-title">
-                 Projects
+                Projects
             </Typography>
             <Box className="display-box">
                 <div className='centered-button'>
-                    <Button color="primary" variant="solid" onClick={handlePrevious} className="carousel-button">Previous</Button>
+                    <Button color="primary" variant="solid" onClick={handlePrevious} className="carousel-button button-style">Previous</Button>
                 </div>
                 <div className="projects-grid">
-                    {showPersonalImageCard && <Card color="neutral" variant="soft"
+                    {/* {showPersonalImageCard && <Card color="neutral" variant="soft"
                         className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
                     >
                         <CardOverflow>
@@ -142,7 +102,7 @@ const Projects: React.FC = () => {
                                 Project Cover
                             </Typography>
                         </CardCover>
-                    </Card>}
+                    </Card>} */}
 
                     {/* Display only the active project */}
                     {projects_details.map((project, index) =>
@@ -199,7 +159,7 @@ const Projects: React.FC = () => {
                             </Card>
                         ) : null
                     )}
-                    {showPersonalImageCard && <Card color="neutral" variant="soft"
+                    {/* {showPersonalImageCard && <Card color="neutral" variant="soft"
                         className={`card-structure-prev ${activeTransition ? 'active' : ''}`}
                     >
                         <CardOverflow>
@@ -224,10 +184,10 @@ const Projects: React.FC = () => {
                                 Project Cover
                             </Typography>
                         </CardCover>
-                    </Card>}
+                    </Card>} */}
                 </div>
                 <div className='centered-button' >
-                    <Button color="primary" variant="solid" onClick={handleNext} className="carousel-button">Next</Button>
+                    <Button color="primary" variant="solid" onClick={handleNext} className="carousel-button button-style">Next</Button>
                 </div>
             </Box>
 

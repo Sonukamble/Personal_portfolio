@@ -27,18 +27,18 @@
 .projects-grid {
     display: flex;
     gap: 20px;
-    max-width: 100%;
+    max-width: 120%;
     width: 100%;
     overflow-x: auto;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     white-space: nowrap;
     scroll-behavior: smooth;
-    padding: 10px 0;
+    padding: 10px 100px;
 }
 
 .card-structure {
     height: 400px !important;
-    width: 30vw !important;
+    width: 35vw !important;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -48,8 +48,8 @@
 
 .card-structure:hover {
     transform: translateY(-5px);
-    height: 400px !important;
-    width: 35vw !important;
+    height: 450px !important;
+    width: 40vw !important;
     box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
@@ -172,6 +172,11 @@
     transform: scale(1);
     opacity: 1;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.button-style{
+    width: 7vw;
+    height: 10vh;
 }
 
 @keyframes fadeIn {
