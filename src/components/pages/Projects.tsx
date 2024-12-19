@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Card from '@mui/joy/Card';
 import '../../css/Projects.css';
-import { AspectRatio, CardContent, Typography, Link, CardOverflow, CardCover } from '@mui/joy';
-import { Box, useMediaQuery } from '@mui/material';
+import { AspectRatio, CardContent, Typography, Link, CardOverflow } from '@mui/joy';
+import { Box } from '@mui/material';
 import Button from '@mui/joy/Button';
 import ResumeProject from '../../assets/Projects/Resume_filter.png';
 import FoodProject from '../../assets/Projects/Food_recipe.png';
@@ -31,42 +31,22 @@ const projects_details = [
 
 const Projects: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [prevIndex, setPrevIndex] = useState(0);
-    const [activeTransition, setActiveTransition] = useState(false);
-    const isMobile = useMediaQuery('(max-width: 600px)');
-    const isTablet = useMediaQuery('(min-width: 601px) and (max-width: 1024px)');
-    const isLaptop = useMediaQuery('(min-width: 1025px)');
-
-    // Card visibility
-    const showPersonalImageCard = isLaptop;
-
 
     const handleDotClick = (index: number) => {
         setActiveIndex(index);
     };
 
     const handleNext = () => {
-        setActiveTransition(true);
-        setPrevIndex(activeIndex);
         setActiveIndex((prevIndex) => (prevIndex + 1) % projects_details.length);
-        triggerTransition();
     };
 
     const handlePrevious = () => {
-        setActiveTransition(true);
-        setPrevIndex(activeIndex);
+        
         setActiveIndex(
             (prevIndex) => (prevIndex - 1 + projects_details.length) % projects_details.length
         );
-        triggerTransition();
     };
 
-    const triggerTransition = () => {
-        setActiveTransition(true);
-        setTimeout(() => {
-            setActiveTransition(false); // Reset after 1 second
-        }, 1000); // Match your transition duration in CSS
-    };
     return (
         <div id="projects" className="projects-container">
             <Typography level="h4" component="h1" className="projects-title">

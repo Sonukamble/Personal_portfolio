@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography, useMediaQuery } from '@mui/material';
-import photo from '../../assets/Home_background/pexels-adrienne-andersen-1174503-2351844.jpg';
 import Grid from '@mui/material/Grid2';
 import './../../css/About.css';
 import { Card, CardCover } from '@mui/joy';
